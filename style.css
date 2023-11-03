@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,16 +9,18 @@ body {
 }
 
 .container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     text-align: center;
+    width: 400px;
 }
 
 h1 {
     color: #333;
-    font-size: 24px;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 .info {
@@ -26,8 +28,8 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
-    padding: 20px 0;
     border-top: 1px solid #ddd;
+    padding-top: 20px;
 }
 
 .label {
@@ -36,22 +38,21 @@ h1 {
 
 .buttons {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: space-evenly;
+    margin-top: 30px;
 }
 
 button {
     background-color: #4caf50;
     border: none;
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    margin: 0 10px;
 }
 
 button:hover {
