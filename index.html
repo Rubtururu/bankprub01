@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banco USDT</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Banco USDT</h1>
+    
+    <div class="info">
+        <p>Mi saldo: <span id="balance">0</span> USDT</p>
+        <p>Dividendos acumulados: <span id="dividends">0</span> USDT</p>
+    </div>
+
+    <button onclick="deposit()">Depositar USDT</button>
+    <button onclick="withdraw()">Retirar USDT</button>
+    <button onclick="claimDividends()">Reclamar Dividendos</button>
+    <button onclick="withdrawDividends()">Retirar Dividendos</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
