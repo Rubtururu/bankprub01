@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +9,10 @@ body {
 }
 
 .container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
     width: 400px;
 }
@@ -34,6 +34,7 @@ h1 {
 
 .label {
     font-weight: bold;
+    color: #555;
 }
 
 .buttons {
@@ -53,8 +54,20 @@ button {
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #45a049;
 }
+
+#countdown {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+#userDailyDividends {
+    font-weight: bold;
+    color: #2196f3;
+}
+
