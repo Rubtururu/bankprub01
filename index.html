@@ -5,19 +5,35 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Banco USDT</h1>
-    
-    <div class="info">
-        <p>Mi saldo: <span id="balance">0</span> USDT</p>
-        <p>Dividendos acumulados: <span id="dividends">0</span> USDT</p>
-        <p>Saldo en la pool del tesoro: <span id="treasuryBalance">0</span> USDT</p>
-        <p>Saldo en la pool de dividendos: <span id="dividendPool">0</span> USDT</p>
-    </div>
+    <div class="container">
+        <h1>Banco USDT</h1>
+        
+        <div class="info">
+            <div>
+                <span class="label">Mi Saldo:</span>
+                <span id="balance">0 USDT</span>
+            </div>
+            <div>
+                <span class="label">Dividendos Acumulados:</span>
+                <span id="dividends">0 USDT</span>
+            </div>
+            <div>
+                <span class="label">Saldo en la Pool del Tesoro:</span>
+                <span id="treasuryBalance">0 USDT</span>
+            </div>
+            <div>
+                <span class="label">Saldo en la Pool de Dividendos:</span>
+                <span id="dividendPool">0 USDT</span>
+            </div>
+        </div>
 
-    <button onclick="deposit()">Depositar USDT</button>
-    <button onclick="withdraw()">Retirar USDT</button>
-    <button onclick="claimDividends()">Reclamar Dividendos</button>
-    <button onclick="withdrawDividends()">Retirar Dividendos</button>
+        <div class="buttons">
+            <button onclick="deposit()">Depositar USDT</button>
+            <button onclick="withdraw()">Retirar USDT</button>
+            <button onclick="claimDividends()">Reclamar Dividendos</button>
+            <button onclick="withdrawDividends()">Retirar Dividendos</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
