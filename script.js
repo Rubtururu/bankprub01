@@ -7,12 +7,17 @@ const contractABI = []; // Define aquí el ABI del contrato
 // Conectar al contrato
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
-// Función para obtener el saldo y dividendos del usuario
-async function updateUserInfo() {
+// Función para obtener el saldo y dividendos del usuario, así como el saldo en las pools
+async function updateUserInfoAndPools() {
     const balance = await contract.methods.userDeposits(userAddress).call();
     const dividends = await contract.methods.userDividends(userAddress).call();
+    const treasuryBalance = await contract.methods.treasuryPool().call();
+    const dividendPool = await contract.methods.dividendPool().call();
+    
     document.getElementById("balance").textContent = balance;
     document.getElementById("dividends").textContent = dividends;
+    document.getElementById("treasuryBalance").textContent = treasuryBalance;
+    document.getElementById("dividendPool").textContent = dividendPool;
 }
 
 // Función para depositar USDT
