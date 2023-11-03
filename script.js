@@ -20,6 +20,21 @@ async function updateUserInfoAndPools() {
     document.getElementById("dividendPool").textContent = dividendPool;
 }
 
+// Función para mostrar el tiempo restante para reclamar dividendos
+function updateCountdown() {
+    const currentTime = Math.floor(Date.now() / 1000);
+    const lastClaimTime = await contract.methods.lastDividendClaim(userAddress).call();
+    const timeRemaining = 86400 - (currentTime - lastClaimTime); // 86400 segundos = 24 horas
+    if (timeRemaining < 0) {
+        document.getElementById("countdown").textContent = "00:00:00";
+    } else {
+        const hours = Math.floor(timeRemaining / 3600);
+        const minutes = Math.floor((timeRemaining % 3600) / 60);
+        const seconds = timeRemaining % 60;
+        document.getElementById("countdown").textContent = `${hours}:${minutes}:${seconds}`;
+    }
+}
+
 // Función para depositar USDT
 async function deposit() {
     const amount = prompt("Ingrese la cantidad de USDT a depositar:");
@@ -47,5 +62,9 @@ async function withdrawDividends() {
     updateUserInfo();
 }
 
+// Actualización del tiempo restante cada segundo
+setInterval(updateCountdown, 1000);
+
 // Inicializar la página
-updateUserInfo();
+updateUserInfoAndPools();
+updateCountdown();
