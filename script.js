@@ -13,11 +13,15 @@ async function updateUserInfoAndPools() {
     const dividends = await contract.methods.userDividends(userAddress).call();
     const treasuryBalance = await contract.methods.treasuryPool().call();
     const dividendPool = await contract.methods.dividendPool().call();
+    const totalDividendsWithdrawn = await contract.methods.userDividendsWithdrawn(userAddress).call();
+    const dailyDistribution = await contract.methods.dailyDistribution().call();
     
     document.getElementById("balance").textContent = balance;
     document.getElementById("dividends").textContent = dividends;
     document.getElementById("treasuryBalance").textContent = treasuryBalance;
     document.getElementById("dividendPool").textContent = dividendPool;
+    document.getElementById("totalDividendsWithdrawn").textContent = totalDividendsWithdrawn;
+    document.getElementById("dailyDistribution").textContent = dailyDistribution;
 }
 
 // Función para mostrar el tiempo restante para reclamar dividendos
@@ -62,8 +66,11 @@ async function withdrawDividends() {
     updateUserInfo();
 }
 
-// Actualización del tiempo restante cada segundo
-setInterval(updateCountdown, 1000);
+// Actualización del tiempo restante y la información del usuario cada segundo
+setInterval(() => {
+    updateCountdown();
+    updateUserInfoAndPools();
+}, 1000);
 
 // Inicializar la página
 updateUserInfoAndPools();
